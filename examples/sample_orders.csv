@@ -1,0 +1,9 @@
+# A small walkthrough: resting liquidity on both sides, a marketable limit
+# order that partially fills and rests the remainder, a cancellation, and a
+# market order that sweeps two price levels.
+NEW,1,SELL,LIMIT,101,10
+NEW,2,SELL,LIMIT,102,10
+NEW,3,BUY,LIMIT,99,5
+NEW,4,BUY,LIMIT,101,4
+CANCEL,3
+NEW,5,BUY,MARKET,,15

@@ -30,6 +30,16 @@ else()
     target_compile_options(lob PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
+# CLI driver: replays a CSV/stdin sequence of orders through the book and
+# prints trades. See src/main.cpp for the file format.
+add_executable(lob_cli src/main.cpp)
+target_link_libraries(lob_cli PRIVATE lob)
+if(MSVC)
+    target_compile_options(lob_cli PRIVATE /W4)
+else()
+    target_compile_options(lob_cli PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
 if(LOB_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
