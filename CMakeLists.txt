@@ -9,10 +9,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-# Off by default until the tests/ and benchmarks/ subdirectories have real
-# CMakeLists.txt files (added in later development phases); turned on below
-# once each exists.
-option(LOB_BUILD_TESTS "Build the Catch2 test suite" OFF)
+# Benchmarks stay off by default until benchmarks/CMakeLists.txt exists.
+option(LOB_BUILD_TESTS "Build the Catch2 test suite" ON)
 option(LOB_BUILD_BENCHMARKS "Build the throughput benchmarks" OFF)
 
 # The order book / matching engine itself, as a static library. Everything
