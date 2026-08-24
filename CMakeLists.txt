@@ -9,9 +9,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-# Benchmarks stay off by default until benchmarks/CMakeLists.txt exists.
 option(LOB_BUILD_TESTS "Build the Catch2 test suite" ON)
-option(LOB_BUILD_BENCHMARKS "Build the throughput benchmarks" OFF)
+option(LOB_BUILD_BENCHMARKS "Build the throughput benchmarks" ON)
 
 # The order book / matching engine itself, as a static library. Everything
 # else (the CLI driver, tests, benchmarks) links against this so there's a
