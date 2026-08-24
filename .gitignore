@@ -1,0 +1,12 @@
+build/
+build-*/
+out/
+*.o
+*.obj
+*.exe
+*.ilk
+*.pdb
+.cache/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
