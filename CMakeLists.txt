@@ -20,6 +20,7 @@ option(LOB_BUILD_BENCHMARKS "Build the throughput benchmarks" OFF)
 # single compiled definition of the core logic.
 add_library(lob STATIC
     src/order_book.cpp
+    src/matching_engine.cpp
 )
 target_include_directories(lob PUBLIC include)
 
