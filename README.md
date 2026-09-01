@@ -29,7 +29,7 @@ examples/sample_orders.csv  a small worked example for the CLI
 `OrderBook` is the data structure (price levels, FIFO queues, the
 cancellation index) and knows nothing about when two orders should trade.
 `MatchingEngine` is the matching policy and knows nothing about
-`std::map`/`std::list` — it only calls `OrderBook`'s public methods. Why
+`std::map`/`std::list`: it only calls `OrderBook`'s public methods. Why
 it's split this way, and why each container was chosen, is written up in
 [DESIGN.md](DESIGN.md), both as prose and as comments next to the code
 itself.
@@ -118,7 +118,7 @@ CANCEL,<id>
 
 `<price>` is ignored for `MARKET` orders and can be left blank
 (`NEW,3,BUY,MARKET,,8`). See `examples/sample_orders.csv` for a short
-worked example — two resting sell orders, a limit buy that partially fills
+worked example: two resting sell orders, a limit buy that partially fills
 and rests the remainder, a cancellation, and a market order that sweeps
 both price levels.
 
@@ -132,7 +132,7 @@ printf 'NEW,1,SELL,LIMIT,101,10\nNEW,2,BUY,LIMIT,101,4\n' | ./build/lob_cli
 
 `Price` and `Quantity` (`include/lob/types.hpp`) are `std::int64_t`, not
 floating point. `std::map` orders price levels with `operator<`, and the
-matching engine's crossing check is a direct price comparison — floating
+matching engine's crossing check is a direct price comparison: floating
 point equality/ordering is the wrong tool for that (`0.1 + 0.2 != 0.3` in
 IEEE 754 double). Real exchanges trade in integer ticks for the same
 reason; this codebase does too, and never converts to a decimal price
