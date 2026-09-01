@@ -2,8 +2,7 @@
 
 A limit order book and matching engine in C++17: price-time priority
 matching, limit and market orders, partial fills, cancellation by order ID.
-Built as a study project: the point wasn't just to get it working, it was
-to end up with something I can explain container-choice-by-container-choice. That explanation lives in [DESIGN.md](DESIGN.md); measured
+The container-choice-by-container-choice explanation is in [DESIGN.md](DESIGN.md); measured
 throughput numbers and an honest discussion of what's actually slow live in
 [BENCHMARKS.md](BENCHMARKS.md).
 
